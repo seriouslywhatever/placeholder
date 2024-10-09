@@ -18,13 +18,22 @@ const NavSlider = ({ data, isClosed }) => {
             {isClosed ?
                 <div /> :
                 <div style={{ flex: 3 }}>
-                    <Box sx={{ width: '90%' }}>
+                    <Box sx={{ marginInline:'10%' }}>
                         <Slider
                             value={value}
                             onChange={handleChange}
                             min={1}
                             max={4}
                             marks={data.marks}
+                            sx={{
+                                '.MuiSlider-markLabel': {
+                                    fontSize: '0.8vw'
+                                },
+                                '.MuiSlider-thumb': {
+                                    width: '1vw',  
+                                    height: '1vw'
+                                },
+                            }}
                         />
                     </Box>
                 </div>

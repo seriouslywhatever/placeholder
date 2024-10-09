@@ -99,6 +99,15 @@ const Home = () => {
         },
     ]
 
+    const labelsize = {
+        '.MuiFormControlLabel-label': {
+            fontSize: '1vw',
+        },
+        '& .MuiSvgIcon-root': {
+            fontSize: '1vw',
+        },
+    }
+
     const renderItem = (person, idx) => {
         return (
             <Card data={person} />
@@ -107,22 +116,22 @@ const Home = () => {
 
     return (
         <div>
-            <Header/>
+            <Header />
             <div className='main'>
                 <div className='side-nav-container'>
                     <Sidebar
                         collapsed={isClosed}
-                        collapsedWidth="6rem"
-                        width='20rem'
+                        collapsedWidth="7vw"
+                        width='20vw'
                         backgroundColor='#D9D9D9'
-                        rootStyles={{ height: '100vh', flex: 1 }}>
+                        rootStyles={{ height: '101vh', flex: 1 }}>
                         <div className='side-nav-button'>
                             <Button
                                 onClick={() => SetOpenState(!isClosed)}>
                                 {isClosed ? <p1>Open</p1> : <p1>Close</p1>}
                             </Button>
                         </div>
-                        <Menu rootStyles={{textAlign:'center'}}>
+                        <Menu rootStyles={{ textAlign: 'center' }}>
                             <h1>Sort</h1>
                             {SIDENAVDATA.map((item) => {
                                 return <MenuItem>
@@ -138,12 +147,12 @@ const Home = () => {
                                         {isClosed ?
                                             <div /> :
                                             <div style={{ flex: 3 }}>
-                                                <Box sx={{ width: '90%' }}>
+                                                <Box sx={{ marginInline: '10%' }}>
                                                     <FormGroup>
-                                                        <FormControlLabel control={<Checkbox />} label="Vegetarian " />
-                                                        <FormControlLabel control={<Checkbox />} label="Vegan" />
-                                                        <FormControlLabel control={<Checkbox />} label="Gluten Free" />
-                                                        <FormControlLabel control={<Checkbox />} label="Halal" />
+                                                        <FormControlLabel sx={labelsize} control={<Checkbox />} label="Vegetarian " />
+                                                        <FormControlLabel sx={labelsize} control={<Checkbox />} label="Vegan" />
+                                                        <FormControlLabel sx={labelsize} control={<Checkbox />} label="Gluten Free" />
+                                                        <FormControlLabel sx={labelsize} control={<Checkbox />} label="Halal" />
                                                     </FormGroup>
                                                 </Box>
                                             </div>
