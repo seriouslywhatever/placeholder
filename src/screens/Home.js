@@ -8,6 +8,7 @@ import Card from '../components/Card';
 import NavSlider from '../components/NavSlider';
 import '../styling/Home.css';
 import logo from '../images/placeholder.png';
+import Header from '../components/Header';
 
 const Home = () => {
     const [isClosed, SetOpenState] = useState(true);
@@ -106,20 +107,7 @@ const Home = () => {
 
     return (
         <div>
-            <div className='header'>
-                <div style={{ flex: 2 }}>
-                    <h1>PlaceHolder</h1>
-                </div>
-                <div style={{ flex: 3, alignContent: 'center' }}>
-                    <input type='search' placeholder='Search...'></input>
-                </div>
-                <div style={{ flex: 2, alignContent: 'center' }}>
-                    <div className='button-container'>
-                        <Button onClick={() => console.log("navigate to Login")}>Login</Button>
-                        <Button onClick={() => console.log("navigate to Register")}>Register</Button>
-                    </div>
-                </div>
-            </div>
+            <Header/>
             <div className='main'>
                 <div className='side-nav-container'>
                     <Sidebar
